@@ -1,4 +1,4 @@
-
+#append sirve para agregar un elemnto a la lista
 # importar libreriras
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,7 +11,7 @@ def unit_step(a, n): #definimos una funcion cuyos parametros son a y n
         else:
             unit.append(1) #si es mayor o igual a "a" pone unos
     return(unit) # devuelve el valor de la lista
-# graficar u[n-a]
+# graficar un escalon u[n-a]
 a = 2 # Enter retraso / adelanto
 UL = 10 #rango superior
 LL = -10 #rango inferior
@@ -46,7 +46,7 @@ plt.yticks([0, 1])
 plt.ylabel('d[n]')
 plt.title('Unit Impulse d[4]')
 plt.savefig("UnitImpulse.png")
-# Function to generate unit ramp signal r(n)
+# Funcion rampa r(n)
 # r(n)= n for n>= 0, r(n)= 0 otherwise
 def unit_ramp(n):
     ramp =[]
@@ -54,7 +54,7 @@ def unit_ramp(n):
         if sample<0:
             ramp.append(0)
         else:
-            ramp.append(sample)
+            ramp.append(sample) 
     return ramp
  
 UL = 10
@@ -69,7 +69,7 @@ plt.ylabel('r[n]')
 plt.title('Unit Ramp r[n]')
 plt.savefig("UnitRamp.png")
  
-# Function to generate exponential signals e**(at)
+# Funcion exponencial signals e**(at)
 def exponential(a, n):
     expo =[]
     for sample in n:
@@ -77,13 +77,13 @@ def exponential(a, n):
     return (expo)
         
 a = 2
-UL = 1
-LL = -1
-n = np.arange(LL, UL, 0.1)
+UL = 10
+LL = -10
+n = np.arange(LL, UL, 1)
 x = exponential(a, n)
 plt.stem(n, x)
 plt.xlabel('n')
-plt.xticks(np.arange(LL, UL, 0.2))
+plt.xticks(np.arange(LL, UL, 1))
 # plt.yticks([0, UL, 1])
 plt.ylabel('x[n]')
 plt.title('Exponential Signal e**(an)')
