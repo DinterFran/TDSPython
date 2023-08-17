@@ -28,7 +28,7 @@ escalon = unit_step(a, n)
 a = 1
 infi = unit_impulse(a,n) # tenemos una lista con un 1 en a
 b = [n * 3 for n in infi] #escalamos la lista por 3
-diferencia = [e1 - e2 for e1, e2 in zip(escalon,b)]
+diferencia = [e1 - e2 for e1, e2 in zip(escalon,b)] # genero 2 variables e1 y e2, las cuales pertenecen a las listas generadas y resto en mi nueva lista. Zip
 plt.stem(n, diferencia)
 plt.xlabel('n')
 plt.xticks(np.arange(LL, UL, 1))
